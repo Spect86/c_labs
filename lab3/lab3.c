@@ -8,23 +8,27 @@ int main()
     printf("Enter h -> ");
     scanf("%lf", &h);
     printf("    x                 f(x) \n -------------------------- \n");
+    int y = 2/h + 1;
+    int i = 0;
 
-   while (0 <= x && x <= 2)
+   while (i != y)
    {
-      for (x; 0 <= x && x <= 1; x+h)
-      {
-         printf("%lf", x);
-         double f = (cos(x + pow(x, 3)));
-         printf("            %lf \n \n", f);
-         x += h;
-      }
-      for (x; 1 < x && x <= 2; x+h)
-      {
-         printf("%lf", x);
-         double f = ((exp(-1 * pow(x, 2))) - (pow(x, 2)) + 2 * x);
-         printf("            %lf \n \n", f);
-         x += h;
-      }
+    if (0 <= x && x <= 1)
+    {
+        printf("%lf", x);
+        double f = (cos(x + pow(x, 3)));
+        printf("            %lf \n \n", f);
+        x += h;
+        i += 1;
+    }
+    else
+    {
+        printf("%lf", x);
+        double f = ((exp(-1 * pow(x, 2))) - (pow(x, 2)) + 2 * x);
+        printf("            %lf \n \n", f);
+        x += h;
+        i += 1;
+    }
    }
    return 0;
 }
